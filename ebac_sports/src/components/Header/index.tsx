@@ -3,7 +3,8 @@ import cesta from '../../assets/cesta.png'
 import { paraReal } from '../Produto'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store'
-import { toggle } from '../../store/reducers/FavCart'
+import { openFav } from '../../store/reducers/FavCart'
+import { openCart } from '../../store/reducers/buy'
 
 const Header = () => {
   const favoriteItens = useSelector((state: RootState) => state.favorites.itens)
@@ -19,14 +20,14 @@ const Header = () => {
     <S.Header>
       <h1>EBAC Sports</h1>
       <div>
-        <S.FavButton onClick={() => dispatch(toggle())}>
+        <S.FavButton onClick={() => dispatch(openFav())}>
           <span>
             {favoriteItens.length < 2
               ? `${favoriteItens.length} favorito`
               : `${favoriteItens.length} favoritos`}
           </span>
         </S.FavButton>
-        <S.CartButton src={cesta} />
+        <S.CartButton onClick={() => dispatch(openCart())} src={cesta} />
         <span>
           {buyItens.length < 2
             ? `${buyItens.length} item`

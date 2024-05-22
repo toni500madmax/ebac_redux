@@ -44,19 +44,22 @@ export const FavButton = styled.button`
   background-color: green;
   font-weight: bold;
   border-radius: 6px;
+
+  &:hover {
+    background-color: greenyellow;
+  }
 `
 
 export const CartButton = styled.img`
-  width: 18px;
+  width: 26px;
   margin-right: 8px;
   margin-left: 16px;
   cursor: pointer;
   transition: all 0.3s;
+  background-color: green;
+  border-radius: 10px;
 
   &:hover {
-    scale: 1.4;
-    color: green;
-    background-color: green;
-    border-radius: 10px;
+    background-color: greenyellow;
   }
 `

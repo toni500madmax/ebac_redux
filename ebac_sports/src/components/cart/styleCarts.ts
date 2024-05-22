@@ -1,13 +1,30 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
 
-export const CartItemContainer = styled.div`
+type ContainerType = {
+  containerType: 'favorites' | 'buy'
+}
+
+export const CartItemContainer = styled.div<ContainerType>`
   width: 360px;
   height: 200vh;
   position: absolute;
   top: 10px;
-  background-color: #fff;
-  border-right: 2px solid black;
+  ${(props) =>
+    props.containerType === 'favorites' ? 'left: 0;' : 'right: 0;'};
+  ${(props) =>
+    props.containerType === 'favorites'
+      ? 'background-color: #fff;'
+      : `background-image: linear-gradient(
+      45deg,
+      ${cores.corPrincipal},
+      ${cores.corSecundaria}
+    );`};
+
+  ${(props) =>
+    props.containerType === 'favorites'
+      ? 'border-right: 2px solid black;'
+      : 'border-left: 2px solid black;'};
   border-bottom: 2px solid black;
   border-top: 2px solid black;
   display: flex;
@@ -16,16 +33,36 @@ export const CartItemContainer = styled.div`
   padding: 16px;
 
   h1 {
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    background-image: linear-gradient(
+    ${(props) =>
+      props.containerType === 'favorites'
+        ? `color: #fff; background-image: linear-gradient(
       45deg,
       ${cores.corPrincipal},
       ${cores.corSecundaria}
-    );
+    );`
+        : `color: ${cores.corSecundaria}; background-color: #fff;`};
+    ${(props) => (props.containerType === 'favorites' ? '' : '')};
+    ${(props) => (props.containerType === 'favorites' ? '' : '')};
+    padding: 10px;
+    width: 100%;
+    text-align: center;
     border-radius: 8px;
+  }
+
+  aside {
+    width: 100%;
+
+    p {
+      display: flex;
+      justify-content: end;
+      padding: 1px;
+      color: red;
+      cursor: pointer;
+
+      &:hover {
+        color: #d09090;
+      }
+    }
   }
 `
 

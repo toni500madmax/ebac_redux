@@ -12,14 +12,14 @@ const favState = createSlice({
   name: 'favoritesCart',
   initialState,
   reducers: {
-    toggle: (state) => {
+    openFav: (state) => {
       state.isVisible = true
     },
-    toggleFalse: (state) => {
+    closeFav: (state) => {
       state.isVisible = false
     }
   }
 })
 
-export const { toggle, toggleFalse } = favState.actions
+export const { openFav, closeFav } = favState.actions
 export default favState.reducer
