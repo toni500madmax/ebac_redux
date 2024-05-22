@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react'
 import Header from './components/Header'
-
 import { GlobalStyle } from './styles'
 import { useSelector } from 'react-redux'
 import { RootState } from './store'
@@ -17,14 +15,6 @@ export type Produto = {
 }
 
 function App() {
-  const [produtos, setProdutos] = useState<Produto[]>([])
-
-  useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/ebac_sports')
-      .then((res) => res.json())
-      .then((res) => setProdutos(res))
-  }, [])
-
   const favCartVisible = useSelector(
     (state: RootState) => state.favoritesCart.isVisible
   )
@@ -35,14 +25,14 @@ function App() {
       <GlobalStyle />
       <div className="container">
         <Header />
-        <ProdutosComponent produtos={produtos} />
+        <ProdutosComponent />
       </div>
       <div>
         <CartItemContainer
           containerType="favorites"
           className={'favoritos' + (favCartVisible === true ? 'active' : '')}
         >
-          <FavCartContainer produtos={produtos} />
+          <FavCartContainer />
         </CartItemContainer>
       </div>
       <div>
@@ -50,7 +40,7 @@ function App() {
           containerType="buy"
           className={'favoritos' + (buyCartVisible === true ? 'active' : '')}
         >
-          <BuyCart produtos={produtos} />
+          <BuyCart />
         </CartItemContainer>
       </div>
     </>

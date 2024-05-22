@@ -1,20 +1,19 @@
 import { ProductInfo, ProductItem } from './styleCarts'
-import { Produto as ProdutoType } from '../../App'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store'
 import { closeFav } from '../../store/reducers/FavCart'
+import { useGetProdutosQuery } from '../../services/api'
 
-type Props = {
-  produtos: ProdutoType[]
-}
+export default function FavCartContainer() {
+  const query = useGetProdutosQuery()
+  const { data: produtos } = query
 
-export default function FavCartContainer({ produtos }: Props) {
   const produtoFavorite = useSelector((state: RootState) => {
     return state.favorites.itens || []
   })
   const dispatch = useDispatch()
 
-  const produtosFavoritos = produtos.filter((produto) =>
+  const produtosFavoritos = produtos?.filter((produto) =>
     produtoFavorite.some((favoriteProduto) => favoriteProduto.id === produto.id)
   )
 
@@ -25,7 +24,7 @@ export default function FavCartContainer({ produtos }: Props) {
       </aside>
       <h1>Favoritos</h1>
       <div>
-        {produtosFavoritos.map((item) => {
+        {produtosFavoritos?.map((item) => {
           return (
             <ProductItem key={item.id}>
               <img src={item.imagem} alt={item.nome} />
