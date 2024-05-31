@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 
 type ContainerType = {
-  containerType: 'favorites' | 'buy'
+  containerType: 'favorites' | ''
 }
 
 export const CartItemContainer = styled.div<ContainerType>`
@@ -10,21 +10,14 @@ export const CartItemContainer = styled.div<ContainerType>`
   height: 200vh;
   position: absolute;
   top: 10px;
+  ${(props) => (props.containerType === 'favorites' ? 'left: 0;' : '')};
   ${(props) =>
-    props.containerType === 'favorites' ? 'left: 0;' : 'right: 0;'};
-  ${(props) =>
-    props.containerType === 'favorites'
-      ? 'background-color: #fff;'
-      : `background-image: linear-gradient(
-      45deg,
-      ${cores.corPrincipal},
-      ${cores.corSecundaria}
-    );`};
+    props.containerType === 'favorites' ? 'background-color: #fff;' : ''};
 
   ${(props) =>
     props.containerType === 'favorites'
       ? 'border-right: 2px solid black;'
-      : 'border-left: 2px solid black;'};
+      : ''};
   border-bottom: 2px solid black;
   border-top: 2px solid black;
   display: flex;

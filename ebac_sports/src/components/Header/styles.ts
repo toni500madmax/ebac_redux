@@ -29,6 +29,12 @@ export const Header = styled.header`
     }
   }
 
+  .link {
+    display: block;
+    margin-right: 22px;
+    margin-left: 22px;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
 

@@ -13,3 +13,14 @@ export const Produtos = styled.ul`
     grid-template-columns: 1fr;
   }
 `
+
+export const BuyContainer = styled.div`
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+  a {
+    text-decoration: none;
+  }
+`

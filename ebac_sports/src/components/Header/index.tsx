@@ -4,7 +4,7 @@ import { paraReal } from '../Produto'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store'
 import { openFav } from '../../store/reducers/FavCart'
-import { openCart } from '../../store/reducers/buy'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   const favoriteItens = useSelector((state: RootState) => state.favorites.itens)
@@ -27,7 +27,9 @@ const Header = () => {
               : `${favoriteItens.length} favoritos`}
           </span>
         </S.FavButton>
-        <S.CartButton onClick={() => dispatch(openCart())} src={cesta} />
+        <Link to="/buycart" className="link">
+          <S.CartButton src={cesta} />
+        </Link>
         <span>
           {buyItens.length < 2
             ? `${buyItens.length} item`

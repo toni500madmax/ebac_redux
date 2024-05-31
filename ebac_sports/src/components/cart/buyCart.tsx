@@ -1,8 +1,9 @@
-import { ProductInfo, ProductItem } from './styleCarts'
-import { useDispatch, useSelector } from 'react-redux'
+import { CartItemContainer, ProductInfo, ProductItem } from './styleCarts'
+import { useSelector } from 'react-redux'
 import { RootState } from '../../store'
-import { closeCart } from '../../store/reducers/buy'
 import { useGetProdutosQuery } from '../../services/api'
+import { BuyContainer } from '../../containers/styles'
+import { Link } from 'react-router-dom'
 
 export default function BuyCart() {
   const query = useGetProdutosQuery()
@@ -11,7 +12,6 @@ export default function BuyCart() {
   const produtosParaComprar = useSelector((state: RootState) => {
     return state.buy.itens || []
   })
-  const dispatch = useDispatch()
 
   const produtosAdicionados = produtos?.filter((produto) =>
     produtosParaComprar.some(
@@ -20,24 +20,28 @@ export default function BuyCart() {
   )
 
   return (
-    <>
-      <aside>
-        <p onClick={() => dispatch(closeCart())}>fechar</p>
-      </aside>
-      <h1>Carrinho</h1>
-      <div>
-        {produtosAdicionados?.map((item) => {
-          return (
-            <ProductItem key={item.id}>
-              <img src={item.imagem} alt={item.nome} />
-              <ProductInfo>
-                <h4>{item.nome}</h4>
-                <h4>{item.preco}</h4>
-              </ProductInfo>
-            </ProductItem>
-          )
-        })}
-      </div>
-    </>
+    <BuyContainer>
+      <CartItemContainer containerType="">
+        <aside>
+          <Link to="/">
+            <p>fechar</p>
+          </Link>
+        </aside>
+        <h1>Carrinho</h1>
+        <div>
+          {produtosAdicionados?.map((item) => {
+            return (
+              <ProductItem key={item.id}>
+                <img src={item.imagem} alt={item.nome} />
+                <ProductInfo>
+                  <h4>{item.nome}</h4>
+                  <h4>{item.preco}</h4>
+                </ProductInfo>
+              </ProductItem>
+            )
+          })}
+        </div>
+      </CartItemContainer>
+    </BuyContainer>
   )
 }
