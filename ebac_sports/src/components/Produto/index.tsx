@@ -26,10 +26,10 @@ const ProdutoComponent = ({ produto }: Props) => {
   }
 
   const favoritar = (produto: ProdutoType) => {
-    if (estaNosFavoritos(produto) === false) {
-      dispatch(adicionar(produto))
-    } else {
+    if (estaNosFavoritos(produto)) {
       dispatch(remover(produto))
+    } else {
+      dispatch(adicionar(produto))
     }
   }
 

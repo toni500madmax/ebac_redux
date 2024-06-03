@@ -15,7 +15,12 @@ const favoritesSlice = createSlice({
       state.itens.push(action.payload)
     },
     remover: (state, action: PayloadAction<Produto>) => {
-      state.itens.splice(state.itens.indexOf(action.payload), 1)
+      const stateId = state.itens.findIndex(
+        (item) => item.id === action.payload.id
+      )
+      if (stateId !== -1) {
+        state.itens.splice(stateId, 1)
+      }
     }
   }
 })
