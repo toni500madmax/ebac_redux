@@ -6,8 +6,8 @@ import { Provider } from 'react-redux'
 import store from './store'
 // Routers
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import BuyCart from './components/cart/BuyCart'
 import Home from './containers/Home'
+import BuyCart from './components/cart/BuyCart'
 
 const router = createBrowserRouter([
   {
