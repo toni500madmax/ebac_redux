@@ -46,7 +46,9 @@ export const MenuButton = ({ children, linkList }: MenuButtonProps) => {
       >
         {Array.isArray(linkList) &&
           linkList.map((link: string) => (
-            <MenuItem onClick={handleClose}>{link}</MenuItem>
+            <MenuItem key={link} onClick={handleClose}>
+              {link}
+            </MenuItem>
           ))}
       </Menu>
     </div>

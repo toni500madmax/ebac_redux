@@ -2,10 +2,14 @@ import * as React from "react";
 import { Avatar as AvaImg } from "@mui/material";
 import Stack from "@mui/material/Stack";
 
-function Avatar() {
+export type inicialProps = {
+  inicial: string;
+};
+
+function Avatar({ inicial }: inicialProps) {
   return (
     <Stack direction="row" spacing={2}>
-      <AvaImg>H</AvaImg>
+      <AvaImg>{inicial.toUpperCase()}</AvaImg>
     </Stack>
   );
 }

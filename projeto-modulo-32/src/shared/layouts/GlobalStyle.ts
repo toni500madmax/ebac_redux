@@ -15,9 +15,9 @@ export const GlobalStyle = createGlobalStyle`
         list-style: none;
         text-decoration: none;
     }
-
+    
     .App {
         background-color: #f5f5f5;
-        height: 100vh;
+        height: 101vh;
     }
 `;

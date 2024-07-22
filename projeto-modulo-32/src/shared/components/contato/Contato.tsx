@@ -2,10 +2,13 @@ import React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import CommentIcon from "@mui/icons-material/Comment";
-import IconButton from "@mui/material/IconButton";
+import ContatoButtons from "../../containers/contatoButtons/contatoButtons";
 
-function Contato() {
+export type ContatoProps = {
+  contato: string[];
+};
+
+function Contato({ contato }: ContatoProps) {
   return (
     <List
       sx={{
@@ -13,15 +16,8 @@ function Contato() {
         padding: "0",
       }}
     >
-      <ListItem
-        disableGutters
-        secondaryAction={
-          <IconButton aria-label="comment">
-            <CommentIcon />
-          </IconButton>
-        }
-      >
-        <ListItemText primary={`Line item 1`} />
+      <ListItem disableGutters secondaryAction={<ContatoButtons />}>
+        <ListItemText primary={`${contato}`} />
       </ListItem>
     </List>
   );
