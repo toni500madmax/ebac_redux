@@ -1,13 +1,27 @@
 import * as React from "react";
 import Menu from "@mui/material/Menu";
 import { IconButton, MenuItem } from "@mui/material";
+import { Link, To } from "react-router-dom";
 
-export interface MenuButtonProps {
+export type linkList = {
   children: React.ReactNode;
-  linkList: string[] | string | null;
-}
+  linkList: [
+    {
+      nome: string;
+      to: string;
+    },
+    {
+      nome: string;
+      to: string;
+    },
+    {
+      nome: string;
+      to: string;
+    }
+  ];
+};
 
-export const MenuButton = ({ children, linkList }: MenuButtonProps) => {
+export const MenuButton = ({ children, linkList }: linkList) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -45,9 +59,9 @@ export const MenuButton = ({ children, linkList }: MenuButtonProps) => {
         }}
       >
         {Array.isArray(linkList) &&
-          linkList.map((link: string) => (
-            <MenuItem key={link} onClick={handleClose}>
-              {link}
+          linkList.map((link: { to: To; nome: string }) => (
+            <MenuItem key={Number.MIN_VALUE} onClick={handleClose}>
+              <Link to={link.to}>{link.nome}</Link>
             </MenuItem>
           ))}
       </Menu>

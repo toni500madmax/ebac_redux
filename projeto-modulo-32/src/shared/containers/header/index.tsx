@@ -8,7 +8,11 @@ export const HeaderContainer = () => {
     <Header>
       <MenuButton
         children={<MenuIcon key={Number.MIN_VALUE} />}
-        linkList={["Link 1", "Link 2", "Link 3"]}
+        linkList={[
+          { nome: "Novo Contato", to: "./adicionarContato" },
+          { nome: "Link 2", to: "/" },
+          { nome: "Link 3", to: "/" },
+        ]}
       />
       <TextTitle>App Agenda Telefônica</TextTitle>
     </Header>
