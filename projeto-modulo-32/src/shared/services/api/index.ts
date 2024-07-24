@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Contatos } from "../../models";
+import { Contatos } from "../../models/Contato.model";
 
 // ToDo: Criar métodos de editar e de deletar.
 
@@ -20,7 +20,7 @@ const api = createApi({
     }),
     postContato: builder.mutation<void, Contatos>({
       query: (novoContato) => ({
-        url: `/contatos`,
+        url: `/contato`,
         method: "POST",
         body: novoContato,
       }),
@@ -28,15 +28,15 @@ const api = createApi({
     }),
     updadeContato: builder.mutation<void, Contatos>({
       query: ({ id, ...rest }) => ({
-        url: `/contatos/${id}`,
-        method: "PUT",
+        url: `/contato/${id}`,
+        method: "PATCH",
         body: rest,
       }),
       invalidatesTags: ["Contatos"],
     }),
-    deleteContato: builder.mutation<void, string>({
+    deleteContato: builder.mutation<void, string | number>({
       query: (id) => ({
-        url: `/contatos/${id}`,
+        url: `/contato/${id}`,
         method: "DELETE",
       }),
       invalidatesTags: ["Contatos"],

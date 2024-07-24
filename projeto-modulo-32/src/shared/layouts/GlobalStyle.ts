@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     
     .App {
         background-color: #f5f5f5;
-        height: 101vh;
+        overflow: scroll;
+        height: 100vh;
     }
 `;

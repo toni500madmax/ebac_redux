@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Contatos } from "../../models";
+import { Contatos } from "../../models/Contato.model";
 
 type ContatoType = {
   contato: Contatos;

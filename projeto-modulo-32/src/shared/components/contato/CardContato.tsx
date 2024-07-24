@@ -8,8 +8,7 @@ import ListItemText from "@mui/material/ListItemText";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ContatoButtons from "../../containers/contatoButtons/contatoButtons";
-import { ContatoCardContainer } from "./Style";
-import { useAppSelector } from "../../hooks";
+import { ContatoCardContainer, TelefoneContainer } from "./Style";
 import { useGetContatosQuery } from "../../services/api";
 
 // ToDo: adicionar link com rota para ir direto para o whatsapp da conversa.
@@ -57,7 +56,11 @@ function CardContato() {
                     disableGutters
                     secondaryAction={<ContatoButtons id={contato.id} />}
                   >
-                    <ListItemText primary={`${contato.telefone}`} />
+                    <TelefoneContainer>
+                      {contato.telefone.map((tel) => (
+                        <ListItemText key={tel} primary={`${tel}`} />
+                      ))}
+                    </TelefoneContainer>
                   </ListItem>
                 </List>
               </AccordionDetails>

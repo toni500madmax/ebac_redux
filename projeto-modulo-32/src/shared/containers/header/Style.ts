@@ -4,13 +4,11 @@ export const Header = styled.div`
   margin: 0 auto;
   padding: 8px;
   background-color: cornflowerblue;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  text-align: left;
 `;
 
 export const TextTitle = styled.h3`
   font-size: 26px;
-  font-weight: 700;
-  width: 800px;
+  font-weight: 500;
+  margin-left: 26px;
 `;
