@@ -12,7 +12,7 @@
       "nome": "Jane Smith",
       "email": "janesmith@example.com",
       "telefone": ["(987) 654-3210"],
-      "categoriaId": 1
+      "categoriaId": 2
     },
     {
       "id": 3,
@@ -26,7 +26,7 @@
       "nome": "Alice Wilson",
       "email": "alwi@example.com",
       "telefone": ["(789) 012-3456"],
-      "categoriaId": 1
+      "categoriaId": 3
     }
   ],
   "categoria": [

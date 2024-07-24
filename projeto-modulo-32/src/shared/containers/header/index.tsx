@@ -3,6 +3,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { MenuButton } from "../../components/menu/MenuButton";
 import { Header, TextTitle } from "./Style";
 
+// ToDo: Melhorar a apresentação da header.
+
 export const HeaderContainer = () => {
   return (
     <Header>

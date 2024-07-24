@@ -29,7 +29,6 @@
 3. > Remover contatos com componente do Material UI: Transfer List.
 4. Listar números.
 5. > Filtragem de contatos com componente Material UI: Categoria List, componente Align List Items OU Inset List Item, pois pode ser incluído método de adicionar aos favoritos.
-6. >
 
 ### Pacotes e templates utilizados para ajudar no desenvolvimento
 

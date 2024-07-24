@@ -1,6 +1,8 @@
 import React from "react";
 import { AdicionarContainer } from "./Style";
 
+// ToDo: Criar o formulário, escolher form do react ou do material Ui
+
 function telaAdicionarNovoContato() {
   return (
     <AdicionarContainer>
