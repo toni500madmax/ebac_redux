@@ -33,9 +33,7 @@ export default function ListaDoContato({ contato }: ContatoProps) {
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             <ListItemButton sx={{ pl: 5, display: "block", width: "100%" }}>
-              {contato.telefone.map((tel) => (
-                <ListItemText key={tel} primary={tel} />
-              ))}
+              <ListItemText primary={contato.telefone} />
             </ListItemButton>
           </List>
         </Collapse>

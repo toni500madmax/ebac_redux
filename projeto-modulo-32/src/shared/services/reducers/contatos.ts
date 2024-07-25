@@ -10,7 +10,7 @@ const initialState: ContatoType = {
     id: 0,
     nome: "",
     email: "",
-    telefone: [""] as string[],
+    telefone: "",
     categoriaId: 1,
   },
 };

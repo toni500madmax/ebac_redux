@@ -9,7 +9,7 @@ export type inicialProps = {
 function Avatar({ inicial }: inicialProps) {
   return (
     <Stack direction="row" spacing={2}>
-      <AvaImg>{inicial.toUpperCase()}</AvaImg>
+      <AvaImg>{inicial.slice(0, 1).toUpperCase()}</AvaImg>
     </Stack>
   );
 }

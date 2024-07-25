@@ -10,13 +10,12 @@ import { modifyDialog } from "../../services/reducers/dialog";
 import { obterContato } from "../../services/reducers/contatos";
 
 export type IdProps = {
-  id: string | number;
+  id: number;
 };
 
 function ContatoButtons({ id }: IdProps) {
   const query = useGetContatosQuery();
   const { data: listaContatos } = query;
-
   const dispatch = useAppDispatch();
 
   const handleClickOpen = () => {

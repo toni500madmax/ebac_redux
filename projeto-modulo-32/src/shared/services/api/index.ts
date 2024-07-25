@@ -18,6 +18,9 @@ const api = createApi({
       query: () => "/categoria",
       providesTags: ["Contatos"],
     }),
+    getContatosById: builder.query<Contatos, number>({
+      query: (id) => `/contato/${id}`,
+    }),
     postContato: builder.mutation<void, Contatos>({
       query: (novoContato) => ({
         url: `/contato`,
@@ -47,6 +50,7 @@ const api = createApi({
 export const {
   useGetContatosQuery,
   useGetCategoriaQuery,
+  useGetContatosByIdQuery,
   usePostContatoMutation,
   useUpdadeContatoMutation,
   useDeleteContatoMutation,

@@ -5,6 +5,7 @@ import RemoveButton from "../../shared/components/button/RemoveButton";
 import { AddButton } from "../../shared/components/button/AddButton";
 
 // ToDo: adicionar os ícones de favoritos e emergência. estrela, e losango(ou outra coisa)
+// ToDo: adicionar alguma biblioteca de loading no carregamento dos dados.
 
 export const HomePage = () => {
   return (

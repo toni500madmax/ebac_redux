@@ -1,10 +1,8 @@
 import React from "react";
 import { AdicionarContainer } from "./Style";
 import {
-  useDeleteContatoMutation,
   useGetContatosQuery,
   usePostContatoMutation,
-  useUpdadeContatoMutation,
 } from "../../shared/services/api";
 import { ReturnButton } from "../../shared/components/button/ReturnButton";
 
@@ -15,34 +13,18 @@ export const TelaAdicionarNovoContato = () => {
   const { data: listaContatos } = query;
 
   const [postContato] = usePostContatoMutation();
-  const [updateContato] = useUpdadeContatoMutation();
-
 
   const contato = {
     id: 6,
     nome: "Lewis Howard",
     email: "Howlewie@email.com",
-    telefone: ["(33) 99456789"],
+    telefone: "(33) 99456789",
     categoriaId: 1,
-  };
-
-  const toUpdateContato = {
-    id: 5,
-    nome: "Erik Dos Santos",
-    email: "erikWag@Gmail.com",
-    telefone: ["(42) 123456789", "(41) 123456789"],
-    categoriaId: 3,
   };
 
   const addHandler = async () => {
     await postContato(contato);
   };
-
-  const updateHandler = async () => {
-    await updateContato(toUpdateContato);
-  };
-
- 
 
   return (
     <>
@@ -53,8 +35,6 @@ export const TelaAdicionarNovoContato = () => {
           <p>{contato.nome}</p>
         ))}
         <button onClick={addHandler}>Adicionar</button>
-        <button onClick={updateHandler}>Atualizar</button>
-        
       </AdicionarContainer>
       <ReturnButton />
     </>

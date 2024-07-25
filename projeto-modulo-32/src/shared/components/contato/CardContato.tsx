@@ -40,7 +40,7 @@ function CardContato() {
                       flexDirection: "row",
                     }}
                   >
-                    <Avatar inicial={contato.nome[0]} />
+                    <Avatar inicial={contato.nome} />
                     <h3>{contato.nome}</h3>
                   </div>
                 </Typography>
@@ -57,9 +57,7 @@ function CardContato() {
                     secondaryAction={<ContatoButtons id={contato.id} />}
                   >
                     <TelefoneContainer>
-                      {contato.telefone.map((tel) => (
-                        <ListItemText key={tel} primary={`${tel}`} />
-                      ))}
+                      <ListItemText primary={`${contato.telefone}`} />
                     </TelefoneContainer>
                   </ListItem>
                 </List>
