@@ -21,7 +21,7 @@ const contatosSlice = createSlice({
   reducers: {
     obterContato: (state, action: PayloadAction<Contatos>) => {
       state.contato = action.payload;
-    },
+    },  
   },
 });
 

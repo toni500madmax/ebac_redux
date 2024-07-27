@@ -1,8 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Contatos } from "../../models/Contato.model";
 
-// ToDo: Criar métodos de editar e de deletar.
-
 const api = createApi({
   reducerPath: "api_agenda_telefonica",
   baseQuery: fetchBaseQuery({
@@ -30,10 +28,10 @@ const api = createApi({
       invalidatesTags: ["Contatos"],
     }),
     updadeContato: builder.mutation<void, Contatos>({
-      query: ({ id, ...rest }) => ({
+      query: ({ id, ...contato }) => ({
         url: `/contato/${id}`,
         method: "PATCH",
-        body: rest,
+        body: contato,
       }),
       invalidatesTags: ["Contatos"],
     }),
