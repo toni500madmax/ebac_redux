@@ -1,15 +1,17 @@
 import styled from "styled-components";
 
-export type TypeLink = {
+export type Link = {
   typeLink: "add" | "remove";
 };
 
-export const LinkButtonContainer = styled.div<TypeLink>`
+export const LinkButtonContainer = styled.div<Link>`
   position: absolute;
   right: 0;
   bottom: 0;
   margin-right: 26px;
-  margin-bottom: ${(props) => (props.typeLink === "remove" ? "26px" : "112px")};
+  margin-bottom: ${(props) => {
+    return props.typeLink === "remove" ? "26" : "112";
+  }}px;
   text-align: center;
 
   .button {
