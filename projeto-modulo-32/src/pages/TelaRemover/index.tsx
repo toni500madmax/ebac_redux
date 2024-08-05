@@ -12,7 +12,7 @@ import {
   RemoveContainer,
   ButtonRemoveContainer,
   ContatosListContainer,
-} from "./Style";
+} from "./style";
 import ListaDoContato from "./ListaDoContato";
 
 function TelaRemoverContatos() {

@@ -1,11 +1,11 @@
 import CommentIcon from "@mui/icons-material/Comment";
 import IconButton from "@mui/material/IconButton";
 import EditIcon from "@mui/icons-material/Edit";
-import { ContatoButtonsContainer } from "./Style";
+import { ContatoButtonsContainer } from "./style";
 import { Link } from "react-router-dom";
 import ModalEdicao from "../../components/modalEdicao";
 import { useGetContatosQuery } from "../../services/api";
-import { useAppDispatch } from "../../hooks";
+import { useAppDispatch } from "../../services/hooks";
 import { modifyDialog } from "../../services/reducers/dialog";
 import { obterContato } from "../../services/reducers/contatos";
 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { LinkButtonContainer } from "./Style";
+import { LinkButtonContainer } from "./style";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
 function RemoveButton() {

@@ -1,5 +1,5 @@
 import React from "react";
-import { AdicionarContainer, FormContainer } from "./Style";
+import { AdicionarContainer, FormContainer } from "./style";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";

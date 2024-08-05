@@ -7,7 +7,7 @@ import Collapse from "@mui/material/Collapse";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import { Contatos } from "../../shared/models/Contato.model";
+import { Contatos } from "../../shared/models/Contato_model";
 
 export type ContatoProps = {
   contato: Contatos;

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Contatos } from "../../models/Contato.model";
+import { Contatos } from "../../models/Contato_model";
 
 const api = createApi({
   reducerPath: "api_agenda_telefonica",

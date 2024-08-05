@@ -8,7 +8,7 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import { Box } from "@mui/material";
-import { useAppDispatch, useAppSelector } from "../../hooks";
+import { useAppDispatch, useAppSelector } from "../../services/hooks";
 import { modifyDialog } from "../../services/reducers/dialog";
 import { useUpdadeContatoMutation } from "../../services/api";
 import { obterContato } from "../../services/reducers/contatos";

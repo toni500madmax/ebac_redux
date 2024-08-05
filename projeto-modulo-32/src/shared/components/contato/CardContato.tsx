@@ -8,7 +8,7 @@ import ListItemText from "@mui/material/ListItemText";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ContatoButtons from "../../containers/contatoButtons/contatoButtons";
-import { ContatoCardContainer, TelefoneContainer } from "./Style";
+import { ContatoCardContainer, TelefoneContainer } from "./style";
 import { useGetContatosQuery } from "../../services/api";
 
 // ToDo: adicionar link com rota para ir direto para o whatsapp da conversa.

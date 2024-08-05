@@ -1,6 +1,6 @@
 import * as React from "react";
 import CardContato from "../../shared/components/contato/CardContato";
-import { HomeContainer } from "./Style";
+import { HomeContainer } from "./style";
 import RemoveButton from "../../shared/components/button/RemoveButton";
 import { AddButton } from "../../shared/components/button/AddButton";
 

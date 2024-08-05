@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, TextTitle } from "./Style";
+import { Header, TextTitle } from "./style";
 
 // ToDo: Melhorar a apresentação da header.
 
