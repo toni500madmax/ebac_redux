@@ -41,20 +41,6 @@
       "email": "johndoe@example.com",
       "telefone": "(123) 456-7890",
       "categoriaId": 1
-    },
-    {
-      "id": 7,
-      "nome": "Toni Prszbiovicsz",
-      "email": "toniEmail@gmail.com",
-      "telefone": "4199999999",
-      "categoriaId": 1
-    },
-    {
-      "id": 8,
-      "nome": "Jessica",
-      "email": "jessicaEmail@gmail.com",
-      "telefone": "4198888888",
-      "categoriaId": 1
     }
   ],
   "categoria": [
