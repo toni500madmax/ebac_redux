@@ -4,7 +4,7 @@ import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 
 export const ReturnButton = () => {
   return (
-    <LinkButtonContainer typeLink={"remove"}>
+    <LinkButtonContainer typelink={"remove"}>
       <Link to={"/"} className="button">
         <KeyboardReturnIcon />
       </Link>

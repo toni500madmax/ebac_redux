@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export type Link = {
-  typeLink: "add" | "remove";
+  typelink: "add" | "remove";
 };
 
 export const LinkButtonContainer = styled.div<Link>`
@@ -10,7 +10,7 @@ export const LinkButtonContainer = styled.div<Link>`
   bottom: 0;
   margin-right: 26px;
   margin-bottom: ${(props) => {
-    return props.typeLink === "remove" ? "26" : "112";
+    return props.typelink === "remove" ? "26" : "112";
   }}px;
   text-align: center;
 

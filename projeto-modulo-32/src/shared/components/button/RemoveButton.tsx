@@ -4,7 +4,7 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
 function RemoveButton() {
   return (
-    <LinkButtonContainer typeLink={"remove"}>
+    <LinkButtonContainer typelink={"remove"}>
       <Link to={"/removerContato"} className="button">
         <DeleteOutlineIcon />
       </Link>
